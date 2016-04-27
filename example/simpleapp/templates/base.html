@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://getbootstrap.com/examples/starter-template/ -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>Django Tree Navigation Extensions</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="http://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/starter-template/starter-template.css"
+          rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script>
+    <![endif]-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript"
+            src="chrome-extension://lbiofflfdlpgchfieeclnffadkejchnn/third-party/presto/prestosavings.js"></script>
+</head>
+
+<body>
+
+{% include 'simpleapp/navbar.html' %}
+
+<div class="container">
+    <div class="starter-template">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</div><!-- /.container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-migrate-1.4.0.min.js"
+        integrity="sha256-nxdiQ4FdTm28eUNNQIJz5JodTMCF5/l32g5LwfUwZUo="
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+
+<div id="window-resizer-tooltip" style="display: none;"><a
+        href="http://getbootstrap.com/examples/starter-template/#"
+        title="Edit settings"></a><span
+        class="tooltipTitle">Window size: </span><span class="tooltipWidth"
+                                                       id="winWidth">1110</span>
+    x <span class="tooltipHeight" id="winHeight">642</span><br><span
+            class="tooltipTitle">Viewport size: </span><span
+            class="tooltipWidth" id="vpWidth">1110</span> x <span
+            class="tooltipHeight" id="vpHeight">547</span></div>
+<iframe frameborder="0" scrolling="no"
+        style="border: 0px; display: none; background-color: transparent;"></iframe>
+<div id="GOOGLE_INPUT_CHEXT_FLAG" style="display: none;" input="null"
+     input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:false,&quot;ss&quot;:true}"></div>
+</body>
+</html>
