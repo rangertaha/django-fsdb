@@ -1,3 +1,4 @@
 Django>=1.9
 elasticutils==0.10.3
+elasticsearch<=1.7.0
 djangorestframework>=3.3.3
