@@ -4,7 +4,7 @@ import os
 import sys
 
 
-#sys.path.insert(0, '/Users/tsaidi/Projects/django-url-locks/')
+#sys.path.insert(0, '/Users/.../django-url-locks/')
 
 
 DEBUG = True
