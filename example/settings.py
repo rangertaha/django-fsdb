@@ -3,6 +3,10 @@
 import os
 import sys
 
+
+#sys.path.insert(0, '/Users/tsaidi/Projects/django-url-locks/')
+
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -116,6 +120,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'elasticutils.contrib.django.ESExceptionMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
@@ -160,5 +165,5 @@ LOGGING = {
 }
 
 
-ES_URLS = ['http://localhost:9200']
+ES_URLS = ['http://127.0.0.1:9200']
 ES_INDEXES = {'default': 'fs_index'}

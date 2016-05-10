@@ -4,5 +4,7 @@ from .views import *
 
 
 urlpatterns = [
-    #url(r'^$', MenuView.as_view()),
+    url(r'^$', FileViewList.as_view(), name='fsdb-file-list'),
+    url(r'^(?P<path>.*)/$', FileViewDetail.as_view(), name='fsdb-file-detail'),
+
 ]

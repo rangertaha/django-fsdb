@@ -55,7 +55,7 @@ class File(models.Model):
         ordering = ('rank',)
 
     def __unicode__(self):
-        return self.name
+        return self.path
 
 
 class FileMappingType(MappingType):
@@ -63,4 +63,3 @@ class FileMappingType(MappingType):
     def get_model(cls):
         return File
 
-file_searcher = FileMappingType.search()

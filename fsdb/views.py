@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 from django.views.generic import ListView, DetailView
 
-from .models import Directory, File, Category
+from .models import Application, File, Category
 
 
-class DirectoryViewDetail(DetailView):
-    model = Directory
+class ApplicationViewDetail(DetailView):
+    model = Application
 
 
-class DirectoryViewList(ListView):
-    model = Directory
+class ApplicationViewList(ListView):
+    model = Application
 
 
 class FileViewDetail(DetailView):

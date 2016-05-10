@@ -10,6 +10,7 @@ from .models import Application, File, Category
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
 
+
 @admin.register(Application)
 class ApplicationAdmin(admin.ModelAdmin):
     list_display = ('name', )
@@ -24,5 +25,5 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(File)
 class FileAdmin(admin.ModelAdmin):
-    list_display = ('rank', 'system', 'permissions', 'type', 'name', 'description')
-    search_fields = ('rank', 'system', 'permissions', 'type', 'name', 'description')
+    list_display = ('rank', 'system', 'permissions', 'type', 'description')
+    search_fields = ('rank', 'system', 'permissions', 'type', 'description')
