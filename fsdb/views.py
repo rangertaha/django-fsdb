@@ -15,6 +15,10 @@ class ApplicationViewList(ListView):
 class FileViewDetail(DetailView):
     model = File
 
+    def get_object(self, queryset=None):
+        return self.model.objects.get(active=True, path=self.kwargs.get(
+            'path', None))
+
 
 class FileViewList(ListView):
     model = File

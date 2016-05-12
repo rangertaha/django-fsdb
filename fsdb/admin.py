@@ -31,5 +31,5 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(File)
 class FileAdmin(admin.ModelAdmin):
-    list_display = ('rank', 'system', 'permissions', 'type', 'description')
-    search_fields = ('rank', 'system', 'permissions', 'type', 'description')
+    list_display = ('rank', 'type', 'path', 'description')
+    search_fields = ('rank', 'system', 'permissions', 'type', 'description', 'path')

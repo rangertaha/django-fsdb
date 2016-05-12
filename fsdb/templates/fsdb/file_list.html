@@ -1,34 +1,57 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <style>
+        .progress {
+            height: 5px;
+            margin-bottom: 0px;
+            overflow: hidden;
+            background-color: #F5F5F5;
+            border-radius: 4px;
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) inset;
+        }
+    </style>
     {% include 'fsdb/snippets/search.html' %}
 
+
+
     <div class="container">
-        <table class="table table-condensed">
-            <thead>
-            <tr>
-                <th>Rank</th>
-                <th>OS</th>
-                <th>Applications</th>
-                <th>Path</th>
-            </tr>
-            </thead>
-            <tbody>
+
+        <div class="list-group">
             {% for obj in object_list %}
-                <tr>
-                    <td>
-                    <div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-    60%
-  </div>
-</div>
-                    </td>
-                    <td>{{ obj.system }}</td>
-                    <td>{{ obj.applications.all|default:'' }}</td>
-                    <td>{{ obj.path }}</td>
-                </tr>
+                <div class="media">
+                    <div class="media-left media-middle">
+
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><i class="fa {{ obj.icon }}" aria-hidden="true"></i>&nbsp;
+                            {% for sys in obj.systems.all %}
+                                <i class="fa {{ sys.icon }}" aria-hidden="true"></i>&nbsp;
+                            {% endfor %}
+                            <a href="{% url 'fsdb-file-detail' obj.path %}">{{ obj.path }}</a>
+                            {% for app in obj.applications.all %}
+                                <i class="fa {{ app.icon }} pull-right" aria-hidden="true"></i>&nbsp;
+                            {% endfor %}
+
+                        </h4>
+                        {{ obj.description }}
+
+
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                                <span class="sr-only">45% Complete</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
             {% endfor %}
-            </tbody>
-        </table>
+        </div>
+
+
     </div>
 {% endblock %}

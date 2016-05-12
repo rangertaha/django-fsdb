@@ -11,14 +11,34 @@ FILE_TYPES = (
     ('link', 'Link'),
 )
 
+ICONS = (
+    ('fa-linux ', 'Linux'),
+    ('fa-windows ', 'Windows '),
+    ('fa-apple ', 'Apple'),
+
+    ('fa-firefox', 'Firefox'),
+    ('fa-chrome ', 'Chrome'),
+    ('fa-internet-explorer', 'Internet Explorer'),
+
+    ('fa-file', 'Physical File'),
+    ('fa-file-o', 'Virtual File'),
+
+
+)
+
 
 class System(models.Model):
     name = models.CharField(max_length=32, blank=True, null=True, unique=True)
+    icon = models.CharField(max_length=32, choices=ICONS, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
+
+    def __unicode__(self):
+        return self.name
 
 
 class Application(models.Model):
     name = models.CharField(max_length=32, blank=True, null=True, unique=True)
+    icon = models.CharField(max_length=32, choices=ICONS, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
 
     def __unicode__(self):
@@ -27,6 +47,7 @@ class Application(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=32, blank=True, null=True, unique=True)
+    icon = models.CharField(max_length=32, choices=ICONS, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
 
     class Meta:
@@ -38,7 +59,8 @@ class Category(models.Model):
 
 class File(models.Model):
     rank = models.IntegerField(blank=True, null=True)
-    type = models.CharField(max_length=512, choices=FILE_TYPES, blank=True, null=True)
+    type = models.CharField(max_length=48, choices=FILE_TYPES, blank=True, null=True)
+    icon = models.CharField(max_length=32, choices=ICONS, blank=True, null=True)
     systems = models.ManyToManyField(System, blank=True)
     applications = models.ManyToManyField(Application, blank=True)
     categories = models.ManyToManyField(Category, blank=True)
