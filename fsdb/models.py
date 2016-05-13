@@ -35,6 +35,10 @@ EXTENSIONS = (
     ('pdf', '.pdf'),
     ('txt', '.txt'),
     ('sqlite', '.sqlite'),
+    ('json', '.json'),
+    ('db', '.db'),
+    ('dat', '.dat'),
+
 )
 
 
