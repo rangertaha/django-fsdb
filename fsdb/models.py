@@ -3,6 +3,9 @@ import logging
 
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.template.defaultfilters import slugify
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
 
 FILE_TYPES = (
     ('dir', 'Directory'),
@@ -84,3 +87,7 @@ class File(models.Model):
         pass
 
 
+@receiver(pre_save, sender=File)
+def pre_file(sender, **kwargs):
+    file = kwargs['instance']
+    file.path = file.path.replace(' ', '.')

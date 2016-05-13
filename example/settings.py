@@ -4,7 +4,7 @@ import os
 import sys
 
 
-#sys.path.insert(0, '/Users/.../django-.../')
+#sys.path.insert(0, '../fsdb/')
 
 
 DEBUG = True
