@@ -16,8 +16,8 @@ class FileViewDetail(DetailView):
     model = File
 
     def get_object(self, queryset=None):
-        return self.model.objects.get(active=True, path=self.kwargs.get(
-            'path', None))
+        return self.model.objects.get(
+            active=True, path=self.kwargs.get('path', None))
 
 
 class FileViewList(ListView):
@@ -27,7 +27,8 @@ class FileViewList(ListView):
     def get_queryset(self):
         if self.request.GET.get('q'):
             return self.model.objects.filter(
-                active=True, path__icontains=self.request.GET['q']).distinct()
+                active=True,
+                path__icontains=self.request.GET['q']).distinct()
         else:
             return self.model.objects.all()
 
