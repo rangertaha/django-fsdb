@@ -22,6 +22,14 @@ class FileViewDetail(DetailView):
 
 class FileViewList(ListView):
     model = File
+    paginate_by = 30
+
+    def get_queryset(self):
+        if self.request.GET.get('q'):
+            return self.model.objects.filter(
+                active=True, path__icontains=self.request.GET['q']).distinct()
+        else:
+            return self.model.objects.all()
 
 
 class CategoryViewDetail(DetailView):
