@@ -26,6 +26,8 @@ ICONS = (
     ('fa-file', 'Physical File'),
     ('fa-file-o', 'Virtual File'),
 
+    ('fa-folder', 'Folder'),
+    ('fa-folder-o', 'Folder White'),
 
 )
 
@@ -90,4 +92,4 @@ class File(models.Model):
 @receiver(pre_save, sender=File)
 def pre_file(sender, **kwargs):
     file = kwargs['instance']
-    file.path = file.path.replace(' ', '.')
+    file.path = file.path.replace(' ', '\\ ')

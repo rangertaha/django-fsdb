@@ -4,9 +4,6 @@ import os
 import sys
 
 
-#sys.path.insert(0, '../fsdb/')
-
-
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -120,7 +117,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'elasticutils.contrib.django.ESExceptionMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
