@@ -15,9 +15,9 @@ FILE_TYPES = (
 )
 
 ICONS = (
-    ('fa-linux ', 'Linux'),
-    ('fa-windows ', 'Windows '),
-    ('fa-apple ', 'Apple'),
+    ('fa-linux', 'Linux'),
+    ('fa-windows ', 'Windows'),
+    ('fa-apple', 'Apple'),
 
     ('fa-firefox', 'Firefox'),
     ('fa-chrome ', 'Chrome'),
@@ -29,6 +29,12 @@ ICONS = (
     ('fa-folder', 'Folder'),
     ('fa-folder-o', 'Folder White'),
 
+)
+
+EXTENSIONS = (
+    ('pdf', '.pdf'),
+    ('txt', '.txt'),
+    ('sqlite', '.sqlite'),
 )
 
 
@@ -71,6 +77,8 @@ class File(models.Model):
     categories = models.ManyToManyField(Category, blank=True)
     permissions = models.CharField(max_length=512, blank=True, null=True)
     path = models.CharField(max_length=512, blank=True, null=True, db_index=True)
+    name = models.CharField(max_length=512, blank=True, null=True, db_index=True)
+    extensions = models.CharField(max_length=512, choices=EXTENSIONS, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
 
     # Metadata
@@ -84,9 +92,6 @@ class File(models.Model):
     def __unicode__(self):
         return self.path
 
-    @property
-    def name(self):
-        pass
 
 
 @receiver(pre_save, sender=File)

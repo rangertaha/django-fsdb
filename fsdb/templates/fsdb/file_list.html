@@ -28,7 +28,7 @@
                             {% for sys in obj.systems.all %}
                                 <i class="fa {{ sys.icon }}" aria-hidden="true"></i>&nbsp;
                             {% endfor %}
-                            <a href="{% url 'fsdb-file-detail' obj.path %}">{{ obj.path }}</a>
+                            <a href="{% url 'fsdb-file-detail' obj.path %}">{{ obj.name }}</a>
                             {% for app in obj.applications.all %}
                                 <i class="fa {{ app.icon }} pull-right" aria-hidden="true"></i>&nbsp;
                             {% endfor %}
