@@ -19,7 +19,6 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'dev.db',
         'USER': '',
@@ -159,7 +158,3 @@ LOGGING = {
         },
     }
 }
-
-
-ES_URLS = ['http://127.0.0.1:9200']
-ES_INDEXES = {'default': 'fs_index'}

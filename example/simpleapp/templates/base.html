@@ -11,7 +11,7 @@
 </head>
 
 <body>
-{% include 'fsdb/snippets/navbar.html' %}
+{% block navbar %}{% include 'fsdb/snippets/navbar.html' %}{% endblock %}
 <div class="container-fluid">
     {% block content %}{% endblock %}
 </div>

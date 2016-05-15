@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.views.generic import ListView, DetailView
 
-from .models import Application, File, Category
+from .models import Application, File, Category, System
 
 
 class ApplicationViewDetail(DetailView):
@@ -22,7 +22,7 @@ class FileViewDetail(DetailView):
 
 class FileViewList(ListView):
     model = File
-    paginate_by = 30
+    paginate_by = 5
 
     def get_queryset(self):
         if self.request.GET.get('q'):
@@ -32,6 +32,13 @@ class FileViewList(ListView):
         else:
             return self.model.objects.all()
 
+    def get_context_data(self, **kwargs):
+        context = super(FileViewList, self).get_context_data(**kwargs)
+        context['systems'] = System.objects.filter().distinct()
+        context['applications'] = Application.objects.filter().distinct()
+        context['categories'] = Category.objects.filter().distinct()
+        return context
+
 
 class CategoryViewDetail(DetailView):
     model = Category
@@ -39,3 +46,11 @@ class CategoryViewDetail(DetailView):
 
 class CategoryViewList(ListView):
     model = Category
+
+
+class SystemViewDetail(DetailView):
+    model = System
+
+
+class SystemViewList(ListView):
+    model = System

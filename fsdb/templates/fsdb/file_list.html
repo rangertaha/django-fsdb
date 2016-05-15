@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% block navbar %}{% include 'fsdb/snippets/navbar.html' %}{% endblock %}
 {% block content %}
     <style>
         .progress {
@@ -11,45 +12,78 @@
             box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) inset;
         }
     </style>
-    {% include 'fsdb/snippets/search.html' %}
 
 
 
-    <div class="container">
 
-        <div class="list-group">
-            {% for obj in object_list %}
-                <div class="media">
-                    <div class="media-left media-middle">
+    <div class="container-fluid">
 
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading"><i class="fa {{ obj.icon }}" aria-hidden="true"></i>&nbsp;
-                            {% for sys in obj.systems.all %}
-                                <i class="fa {{ sys.icon }}" aria-hidden="true"></i>&nbsp;
-                            {% endfor %}
-                            <a href="{% url 'fsdb-file-detail' obj.path %}">{{ obj.name }}</a>
-                            {% for app in obj.applications.all %}
-                                <i class="fa {{ app.icon }} pull-right" aria-hidden="true"></i>&nbsp;
-                            {% endfor %}
+        <div class="row">
+            <div class="col-sm-2" style="padding-top:50px;">
+                <div class="sidebar-module">
+                    <h4>Systems</h4>
+                    <ol class="list-unstyled">
+                        {% for obj in systems.all %}
+                        <li><a href="#">{{ obj.name }}</a></li>
+                        {% endfor %}
 
-                        </h4>
-                        {{ obj.description }}
+                    </ol>
+                </div>
+                <div class="sidebar-module">
+                    <h4>Applications</h4>
+                    <ol class="list-unstyled">
+                        {% for obj in applications.all %}
+                        <li><a href="#">{{ obj.name }}</a></li>
+                        {% endfor %}
+                    </ol>
+                </div>
+                <div class="sidebar-module">
+                    <h4>Categories</h4>
+                    <ol class="list-unstyled">
+                        {% for obj in categories.all %}
+                        <li><a href="#">{{ obj.name }}</a></li>
+                        {% endfor %}
+                    </ol>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                {% include 'fsdb/snippets/search.html' %}
+                <div class="list-group">
+                    {% for obj in object_list %}
+                        <div class="media">
+                            <div class="media-left media-middle">
+
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading"><i class="fa {{ obj.icon }}" aria-hidden="true"></i>&nbsp;
+                                    {% for sys in obj.systems.all %}
+                                        <i class="fa {{ sys.icon }}" aria-hidden="true"></i>&nbsp;
+                                    {% endfor %}
+                                    <a href="{% url 'fsdb-file-detail' obj.path %}">{{ obj.name }}</a>
+                                    {% for app in obj.applications.all %}
+                                        <i class="fa {{ app.icon }} pull-right" aria-hidden="true"></i>&nbsp;
+                                    {% endfor %}
+
+                                </h4>
+                                {{ obj.description }}
 
 
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: {{ obj.rank }}%">
-                                <span class="sr-only">45% Complete</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: {{ obj.rank }}%">
+                                        <span class="sr-only">45% Complete</span>
+                                    </div>
+                                </div>
+
+
                             </div>
                         </div>
 
 
-                    </div>
+
+                    {% endfor %}
                 </div>
-
-
-
-            {% endfor %}
+            </div>
+            <div class="col-sm-2"></div>
         </div>
 
 

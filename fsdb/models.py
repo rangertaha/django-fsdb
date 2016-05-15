@@ -44,6 +44,7 @@ EXTENSIONS = (
 
 class System(models.Model):
     name = models.CharField(max_length=32, blank=True, null=True, unique=True)
+    slug = models.SlugField(max_length=32, blank=True, null=True, unique=True)
     icon = models.CharField(max_length=32, choices=ICONS, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
 
@@ -61,11 +62,14 @@ class Application(models.Model):
 
 
 class Category(models.Model):
+    rank = models.IntegerField(blank=True, null=True)
+    slug = models.SlugField(max_length=32, blank=True, null=True, unique=True)
     name = models.CharField(max_length=32, blank=True, null=True, unique=True)
     icon = models.CharField(max_length=32, choices=ICONS, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
 
     class Meta:
+        ordering = ('rank', )
         verbose_name_plural = "Categories"
 
     def __unicode__(self):
@@ -76,7 +80,7 @@ class File(models.Model):
     rank = models.IntegerField(blank=True, null=True)
     type = models.CharField(max_length=48, choices=FILE_TYPES, blank=True, null=True)
     icon = models.CharField(max_length=32, choices=ICONS, blank=True, null=True)
-    systems = models.ManyToManyField(System, blank=True)
+    system = models.ForeignKey(System, blank=True, related_name='files')
     applications = models.ManyToManyField(Application, blank=True)
     categories = models.ManyToManyField(Category, blank=True)
     permissions = models.CharField(max_length=512, blank=True, null=True)
@@ -97,8 +101,21 @@ class File(models.Model):
         return self.path
 
 
-
 @receiver(pre_save, sender=File)
 def pre_file(sender, **kwargs):
     file = kwargs['instance']
-    file.path = file.path.replace(' ', '\\ ')
+    file.path = file.path.replace(' ', ' ')
+
+
+@receiver(pre_save, sender=System)
+def slugify_system_name(sender, **kwargs):
+    system = kwargs['instance']
+    if system.slug is None or system.slug is '':
+        system.slug = slugify(system.name)
+
+
+@receiver(pre_save, sender=Category)
+def slugify_system_name(sender, **kwargs):
+    category = kwargs['instance']
+    if category.slug is None or category.slug is '':
+        category.slug = slugify(category.name)
