@@ -104,7 +104,7 @@ class File(models.Model):
 @receiver(pre_save, sender=File)
 def pre_file(sender, **kwargs):
     file = kwargs['instance']
-    file.path = file.path.replace(' ', ' ')
+    #file.path = file.path.replace(' ', ' ')
 
 
 @receiver(pre_save, sender=System)

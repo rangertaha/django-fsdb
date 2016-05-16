@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 from django.views.generic import ListView, DetailView
+from rest_framework import viewsets
 
 from .models import Application, File, Category, System
+from .serializers import FileSerializer, SystemSerializer, \
+    CategorySerializer, ApplicationSerializer
 
 
 class ApplicationViewDetail(DetailView):
@@ -54,3 +57,36 @@ class SystemViewDetail(DetailView):
 
 class SystemViewList(ListView):
     model = System
+
+
+
+class FileAPIViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = File.objects.all().order_by('-rank')
+    serializer_class = FileSerializer
+
+
+class SystemAPIViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to b
+    """
+    queryset = System.objects.all()
+    serializer_class = SystemSerializer
+
+
+class CategoryAPIViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to b
+    """
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+
+class ApplicationAPIViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to b
+    """
+    queryset = Application.objects.all()
+    serializer_class = ApplicationSerializer

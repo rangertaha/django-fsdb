@@ -1,1 +1,402 @@
-[{"model": "fsdb.system", "pk": 1, "fields": {"name": "Linux", "icon": "fa-linux ", "description": ""}}, {"model": "fsdb.system", "pk": 2, "fields": {"name": "Windows", "icon": "fa-windows ", "description": ""}}, {"model": "fsdb.system", "pk": 3, "fields": {"name": "MacOSX", "icon": "fa-apple ", "description": ""}}, {"model": "fsdb.system", "pk": 4, "fields": {"name": "Unix", "icon": "fa-linux ", "description": ""}}, {"model": "fsdb.application", "pk": 1, "fields": {"name": "Firefox", "icon": "fa-firefox", "description": ""}}, {"model": "fsdb.category", "pk": 1, "fields": {"name": "Passwords", "icon": null, "description": ""}}, {"model": "fsdb.category", "pk": 2, "fields": {"name": "Bookmarks", "icon": null, "description": ""}}, {"model": "fsdb.category", "pk": 3, "fields": {"name": "Downloads", "icon": null, "description": ""}}, {"model": "fsdb.category", "pk": 4, "fields": {"name": "Web History", "icon": null, "description": ""}}, {"model": "fsdb.category", "pk": 5, "fields": {"name": "Cookies", "icon": null, "description": ""}}, {"model": "fsdb.category", "pk": 6, "fields": {"name": "Certificates", "icon": null, "description": ""}}, {"model": "fsdb.category", "pk": 7, "fields": {"name": "Preferences", "icon": null, "description": ""}}, {"model": "fsdb.category", "pk": 8, "fields": {"name": "Permissions", "icon": null, "description": ""}}, {"model": "fsdb.category", "pk": 9, "fields": {"name": "Dictionary", "icon": null, "description": ""}}, {"model": "fsdb.category", "pk": 10, "fields": {"name": "Profile", "icon": null, "description": ""}}, {"model": "fsdb.category", "pk": 11, "fields": {"name": "Autocomplete", "icon": null, "description": ""}}, {"model": "fsdb.category", "pk": 12, "fields": {"name": "History", "icon": null, "description": ""}}, {"model": "fsdb.file", "pk": 1, "fields": {"rank": 30, "type": "pfile", "icon": "fa-file", "permissions": "-rw-r--r--@", "path": "/Users/*/Library/Application.Support/Firefox/Profiles/*.default/places.sqlite", "name": "places.sqlite", "extensions": "sqlite", "description": "The places.sqlite file contains all your Firefox bookmarks and lists of all the files you've downloaded and websites you\u2019ve visited.", "created": "2016-05-13T23:28:52.173Z", "updated": "2016-05-13T22:20:19.770Z", "active": true, "systems": [3], "applications": [1], "categories": [1, 2, 3, 4]}}, {"model": "fsdb.file", "pk": 2, "fields": {"rank": 90, "type": "pfile", "icon": "fa-file", "permissions": "-rw-------@", "path": "/Users/*/Library/Application\\\\ Support/Firefox/Profiles/*.default/key3.db", "name": "key3.db", "extensions": "db", "description": "Your passwords are stored in the key3.db and logins.json files", "created": "2016-05-13T23:20:01.427Z", "updated": "2016-05-13T22:22:38.533Z", "active": false, "systems": [3], "applications": [1], "categories": [1]}}, {"model": "fsdb.file", "pk": 3, "fields": {"rank": 90, "type": "pfile", "icon": "fa-file", "permissions": "-rw-------@", "path": "Users/*/Library/Application\\\\\\ Support/Firefox/Profiles/*.default/logins.json", "name": "logins.json", "extensions": "json", "description": "Your passwords are stored in the key3.db and logins.json files", "created": "2016-05-13T23:19:09.296Z", "updated": "2016-05-13T22:23:41.197Z", "active": false, "systems": [3], "applications": [1], "categories": [1]}}, {"model": "fsdb.file", "pk": 4, "fields": {"rank": 10, "type": "pfile", "icon": "fa-file", "permissions": "-rw-r--r--@", "path": "/Users/*/Library/Application\\\\ Support/Firefox/Profiles/*.default/content-prefs.sqlite", "name": "content-prefs.sqlite", "extensions": "sqlite", "description": "The permissions.sqlite and content-prefs.sqlite files store many of your Firefox permissions (for instance, which sites are allowed to display popups) or zoom levels that are set on a site-by-site basis", "created": "2016-05-13T23:21:46.764Z", "updated": "2016-05-13T22:30:08.991Z", "active": false, "systems": [3], "applications": [1], "categories": [7]}}, {"model": "fsdb.file", "pk": 5, "fields": {"rank": 10, "type": "pfile", "icon": "fa-file", "permissions": "-rw-r--r--@", "path": "/Users/*/Library/Application\\\\ Support/Firefox/Profiles/*.default/permissions.sqlite", "name": "permissions.sqlite", "extensions": "sqlite", "description": "The permissions.sqlite and content-prefs.sqlite files store many of your Firefox permissions (for instance, which sites are allowed to display popups) or zoom levels that are set on a site-by-site basis", "created": "2016-05-13T23:21:07.494Z", "updated": "2016-05-13T22:32:56.226Z", "active": true, "systems": [3], "applications": [1], "categories": [7, 8]}}, {"model": "fsdb.file", "pk": 6, "fields": {"rank": 5, "type": "dir", "icon": "fa-folder", "permissions": "drwx------", "path": "/Users/*/Library/Application\\\\\\ Support/Firefox/Profiles/*.default/", "name": "*.default", "extensions": null, "description": "Firefox profiles directory", "created": "2016-05-13T23:23:56.226Z", "updated": "2016-05-13T22:38:10.130Z", "active": true, "systems": [3], "applications": [1], "categories": [10]}}, {"model": "fsdb.file", "pk": 7, "fields": {"rank": 5, "type": "pfile", "icon": "fa-file", "permissions": "", "path": "/Users/*/Library/Application\\\\\\ Support/Firefox/Profiles/*.default/persdict.dat", "name": "persdict.dat", "extensions": "dat", "description": "The persdict.dat file stores any custom words you have added to Firefox's dictionary.", "created": "2016-05-13T23:22:33.126Z", "updated": "2016-05-13T22:40:04.424Z", "active": true, "systems": [3], "applications": [1], "categories": [9]}}, {"model": "fsdb.file", "pk": 8, "fields": {"rank": 10, "type": "pfile", "icon": "fa-file", "permissions": "-rw-r--r--\u00c9", "path": "/Users/*/Library/Application\\\\ Support/Firefox/Profiles/*.default/formhistory.sqlite", "name": "formhistory.sqlite", "extensions": "sqlite", "description": "The formhistory.sqlite file remembers what you have searched for in the Firefox search bar and what information you\u2019ve entered into forms on websites.", "created": "2016-05-13T23:20:33.929Z", "updated": "2016-05-13T22:44:25.029Z", "active": true, "systems": [3], "applications": [1], "categories": [11, 12]}}, {"model": "fsdb.file", "pk": 9, "fields": {"rank": 2, "type": "pfile", "icon": "fa-file", "permissions": "-rw-r--r--\u00c9", "path": "/Users/*/Library/Application\\\\ Support/Firefox/Profiles/*.default/cookies.sqlite", "name": "cookies.sqlite", "extensions": "sqlite", "description": "A cookie is a bit of information stored on your computer by a website you\u2019ve visited. Usually this is something like your site preferences or login status. Cookies are all stored in the cookies.sqlite file.", "created": "2016-05-13T23:23:17.952Z", "updated": "2016-05-13T22:49:31.085Z", "active": true, "systems": [3], "applications": [1], "categories": [5, 7]}}, {"model": "fsdb.file", "pk": 10, "fields": {"rank": 2, "type": "pfile", "icon": "fa-file", "permissions": "-rw-r--r--\u00c9", "path": "/Users/*/Library/Application\\\\ Support/Firefox/Profiles/*.default/webappsstore.sqlite", "name": "webappsstore.sqlite", "extensions": "sqlite", "description": "DOM Storage is designed to provide a larger, more secure, and easier-to-use alternative to storing information in cookies. Information is stored in the webappsstore.sqlite file for websites and in the chromeappsstore.sqlite for about:* pages.", "created": "2016-05-13T23:23:00.989Z", "updated": "2016-05-13T22:52:29.299Z", "active": true, "systems": [3], "applications": [1], "categories": [5, 7]}}]
+[
+  {
+    "model": "fsdb.system",
+    "pk": 1,
+    "fields": {
+      "name": "Linux",
+      "icon": "fa-linux ",
+      "description": ""
+    }
+  },
+  {
+    "model": "fsdb.system",
+    "pk": 2,
+    "fields": {
+      "name": "Windows",
+      "icon": "fa-windows ",
+      "description": ""
+    }
+  },
+  {
+    "model": "fsdb.system",
+    "pk": 3,
+    "fields": {
+      "name": "MacOSX",
+      "icon": "fa-apple ",
+      "description": ""
+    }
+  },
+  {
+    "model": "fsdb.system",
+    "pk": 4,
+    "fields": {
+      "name": "Unix",
+      "icon": "fa-linux ",
+      "description": ""
+    }
+  },
+  {
+    "model": "fsdb.application",
+    "pk": 1,
+    "fields": {
+      "name": "Firefox",
+      "icon": "fa-firefox",
+      "description": ""
+    }
+  },
+  {
+    "model": "fsdb.category",
+    "pk": 1,
+    "fields": {
+      "name": "Passwords",
+      "icon": null,
+      "description": ""
+    }
+  },
+  {
+    "model": "fsdb.category",
+    "pk": 2,
+    "fields": {
+      "name": "Bookmarks",
+      "icon": null,
+      "description": ""
+    }
+  },
+  {
+    "model": "fsdb.category",
+    "pk": 3,
+    "fields": {
+      "name": "Downloads",
+      "icon": null,
+      "description": ""
+    }
+  },
+  {
+    "model": "fsdb.category",
+    "pk": 4,
+    "fields": {
+      "name": "Web History",
+      "icon": null,
+      "description": ""
+    }
+  },
+  {
+    "model": "fsdb.category",
+    "pk": 5,
+    "fields": {
+      "name": "Cookies",
+      "icon": null,
+      "description": ""
+    }
+  },
+  {
+    "model": "fsdb.category",
+    "pk": 6,
+    "fields": {
+      "name": "Certificates",
+      "icon": null,
+      "description": ""
+    }
+  },
+  {
+    "model": "fsdb.category",
+    "pk": 7,
+    "fields": {
+      "name": "Preferences",
+      "icon": null,
+      "description": ""
+    }
+  },
+  {
+    "model": "fsdb.category",
+    "pk": 8,
+    "fields": {
+      "name": "Permissions",
+      "icon": null,
+      "description": ""
+    }
+  },
+  {
+    "model": "fsdb.category",
+    "pk": 9,
+    "fields": {
+      "name": "Dictionary",
+      "icon": null,
+      "description": ""
+    }
+  },
+  {
+    "model": "fsdb.category",
+    "pk": 10,
+    "fields": {
+      "name": "Profile",
+      "icon": null,
+      "description": ""
+    }
+  },
+  {
+    "model": "fsdb.category",
+    "pk": 11,
+    "fields": {
+      "name": "Autocomplete",
+      "icon": null,
+      "description": ""
+    }
+  },
+  {
+    "model": "fsdb.category",
+    "pk": 12,
+    "fields": {
+      "name": "History",
+      "icon": null,
+      "description": ""
+    }
+  },
+  {
+    "model": "fsdb.file",
+    "pk": 1,
+    "fields": {
+      "rank": 30,
+      "type": "pfile",
+      "icon": "fa-file",
+      "permissions": "-rw-r--r--@",
+      "path": "/Users/*/Library/Application.Support/Firefox/Profiles/*.default/places.sqlite",
+      "name": "places.sqlite",
+      "extensions": "sqlite",
+      "description": "The places.sqlite file contains all your Firefox bookmarks and lists of all the files you've downloaded and websites you\u2019ve visited.",
+      "created": "2016-05-13T23:28:52.173Z",
+      "updated": "2016-05-13T22:20:19.770Z",
+      "active": true,
+      "system": 3,
+      "applications": [
+        1
+      ],
+      "categories": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "model": "fsdb.file",
+    "pk": 2,
+    "fields": {
+      "rank": 90,
+      "type": "pfile",
+      "icon": "fa-file",
+      "permissions": "-rw-------@",
+      "path": "/Users/*/Library/Application\\\\ Support/Firefox/Profiles/*.default/key3.db",
+      "name": "key3.db",
+      "extensions": "db",
+      "description": "Your passwords are stored in the key3.db and logins.json files",
+      "created": "2016-05-13T23:20:01.427Z",
+      "updated": "2016-05-13T22:22:38.533Z",
+      "active": false,
+      "system": 3,
+      "applications": [
+        1
+      ],
+      "categories": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "fsdb.file",
+    "pk": 3,
+    "fields": {
+      "rank": 90,
+      "type": "pfile",
+      "icon": "fa-file",
+      "permissions": "-rw-------@",
+      "path": "Users/*/Library/Application\\\\\\ Support/Firefox/Profiles/*.default/logins.json",
+      "name": "logins.json",
+      "extensions": "json",
+      "description": "Your passwords are stored in the key3.db and logins.json files",
+      "created": "2016-05-13T23:19:09.296Z",
+      "updated": "2016-05-13T22:23:41.197Z",
+      "active": false,
+      "system": 3,
+      "applications": [
+        1
+      ],
+      "categories": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "fsdb.file",
+    "pk": 4,
+    "fields": {
+      "rank": 10,
+      "type": "pfile",
+      "icon": "fa-file",
+      "permissions": "-rw-r--r--@",
+      "path": "/Users/*/Library/Application\\\\ Support/Firefox/Profiles/*.default/content-prefs.sqlite",
+      "name": "content-prefs.sqlite",
+      "extensions": "sqlite",
+      "description": "The permissions.sqlite and content-prefs.sqlite files store many of your Firefox permissions (for instance, which sites are allowed to display popups) or zoom levels that are set on a site-by-site basis",
+      "created": "2016-05-13T23:21:46.764Z",
+      "updated": "2016-05-13T22:30:08.991Z",
+      "active": false,
+      "system": 3,
+      "applications": [
+        1
+      ],
+      "categories": [
+        7
+      ]
+    }
+  },
+  {
+    "model": "fsdb.file",
+    "pk": 5,
+    "fields": {
+      "rank": 10,
+      "type": "pfile",
+      "icon": "fa-file",
+      "permissions": "-rw-r--r--@",
+      "path": "/Users/*/Library/Application\\\\ Support/Firefox/Profiles/*.default/permissions.sqlite",
+      "name": "permissions.sqlite",
+      "extensions": "sqlite",
+      "description": "The permissions.sqlite and content-prefs.sqlite files store many of your Firefox permissions (for instance, which sites are allowed to display popups) or zoom levels that are set on a site-by-site basis",
+      "created": "2016-05-13T23:21:07.494Z",
+      "updated": "2016-05-13T22:32:56.226Z",
+      "active": true,
+      "system": 3,
+      "applications": [
+        1
+      ],
+      "categories": [
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "fsdb.file",
+    "pk": 6,
+    "fields": {
+      "rank": 5,
+      "type": "dir",
+      "icon": "fa-folder",
+      "permissions": "drwx------",
+      "path": "/Users/*/Library/Application\\\\\\ Support/Firefox/Profiles/*.default/",
+      "name": "*.default",
+      "extensions": null,
+      "description": "Firefox profiles directory",
+      "created": "2016-05-13T23:23:56.226Z",
+      "updated": "2016-05-13T22:38:10.130Z",
+      "active": true,
+      "system": 3,
+      "applications": [
+        1
+      ],
+      "categories": [
+        10
+      ]
+    }
+  },
+  {
+    "model": "fsdb.file",
+    "pk": 7,
+    "fields": {
+      "rank": 5,
+      "type": "pfile",
+      "icon": "fa-file",
+      "permissions": "",
+      "path": "/Users/*/Library/Application\\\\\\ Support/Firefox/Profiles/*.default/persdict.dat",
+      "name": "persdict.dat",
+      "extensions": "dat",
+      "description": "The persdict.dat file stores any custom words you have added to Firefox's dictionary.",
+      "created": "2016-05-13T23:22:33.126Z",
+      "updated": "2016-05-13T22:40:04.424Z",
+      "active": true,
+      "system": 3,
+      "applications": [
+        1
+      ],
+      "categories": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "fsdb.file",
+    "pk": 8,
+    "fields": {
+      "rank": 10,
+      "type": "pfile",
+      "icon": "fa-file",
+      "permissions": "-rw-r--r--\u00c9",
+      "path": "/Users/*/Library/Application\\\\ Support/Firefox/Profiles/*.default/formhistory.sqlite",
+      "name": "formhistory.sqlite",
+      "extensions": "sqlite",
+      "description": "The formhistory.sqlite file remembers what you have searched for in the Firefox search bar and what information you\u2019ve entered into forms on websites.",
+      "created": "2016-05-13T23:20:33.929Z",
+      "updated": "2016-05-13T22:44:25.029Z",
+      "active": true,
+      "system": 3,
+      "applications": [
+        1
+      ],
+      "categories": [
+        11,
+        12
+      ]
+    }
+  },
+  {
+    "model": "fsdb.file",
+    "pk": 9,
+    "fields": {
+      "rank": 2,
+      "type": "pfile",
+      "icon": "fa-file",
+      "permissions": "-rw-r--r--\u00c9",
+      "path": "/Users/*/Library/Application\\\\ Support/Firefox/Profiles/*.default/cookies.sqlite",
+      "name": "cookies.sqlite",
+      "extensions": "sqlite",
+      "description": "A cookie is a bit of information stored on your computer by a website you\u2019ve visited. Usually this is something like your site preferences or login status. Cookies are all stored in the cookies.sqlite file.",
+      "created": "2016-05-13T23:23:17.952Z",
+      "updated": "2016-05-13T22:49:31.085Z",
+      "active": true,
+      "system": 3,
+      "applications": [
+        1
+      ],
+      "categories": [
+        5,
+        7
+      ]
+    }
+  },
+  {
+    "model": "fsdb.file",
+    "pk": 10,
+    "fields": {
+      "rank": 2,
+      "type": "pfile",
+      "icon": "fa-file",
+      "permissions": "-rw-r--r--\u00c9",
+      "path": "/Users/*/Library/Application\\\\ Support/Firefox/Profiles/*.default/webappsstore.sqlite",
+      "name": "webappsstore.sqlite",
+      "extensions": "sqlite",
+      "description": "DOM Storage is designed to provide a larger, more secure, and easier-to-use alternative to storing information in cookies. Information is stored in the webappsstore.sqlite file for websites and in the chromeappsstore.sqlite for about:* pages.",
+      "created": "2016-05-13T23:23:00.989Z",
+      "updated": "2016-05-13T22:52:29.299Z",
+      "active": true,
+      "system": 3,
+      "applications": [
+        1
+      ],
+      "categories": [
+        5,
+        7
+      ]
+    }
+  }
+]
