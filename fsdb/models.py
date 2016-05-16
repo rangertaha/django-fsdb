@@ -52,6 +52,10 @@ class System(models.Model):
     def __unicode__(self):
         return self.name
 
+    def update_count(self):
+        self.count = len(self.files.all())
+        self.save()
+
 
 class Application(models.Model):
     name = models.CharField(max_length=32, blank=True, null=True, unique=True)
@@ -62,6 +66,10 @@ class Application(models.Model):
 
     def __unicode__(self):
         return '{0}:{1}'.format(self.name, self.version)
+
+    def update_count(self):
+        self.count = len(self.files.all())
+        self.save()
 
 
 class Category(models.Model):
@@ -79,14 +87,18 @@ class Category(models.Model):
     def __unicode__(self):
         return self.name
 
+    def update_count(self):
+        self.count = len(self.files.all())
+        self.save()
+
 
 class File(models.Model):
     rank = models.IntegerField(blank=True, null=True)
     type = models.CharField(max_length=48, choices=FILE_TYPES, blank=True, null=True)
     icon = models.CharField(max_length=32, choices=ICONS, blank=True, null=True)
     system = models.ForeignKey(System, blank=True, related_name='files')
-    applications = models.ManyToManyField(Application, blank=True)
-    categories = models.ManyToManyField(Category, blank=True)
+    applications = models.ManyToManyField(Application, blank=True, related_name='files')
+    categories = models.ManyToManyField(Category, blank=True, related_name='files')
     permissions = models.CharField(max_length=512, blank=True, null=True)
     path = models.CharField(max_length=512, blank=True, null=True, db_index=True)
     name = models.CharField(max_length=512, blank=True, null=True, db_index=True)
@@ -108,7 +120,12 @@ class File(models.Model):
 @receiver(pre_save, sender=File)
 def pre_file(sender, **kwargs):
     file = kwargs['instance']
-    #file.path = file.path.replace(' ', ' ')
+    file.system.update_count()
+    for app in file.applications.all():
+        app.update_count()
+    for cat in file.categories.all():
+        cat.update_count()
+
 
 
 @receiver(pre_save, sender=System)
