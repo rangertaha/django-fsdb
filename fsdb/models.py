@@ -47,6 +47,7 @@ class System(models.Model):
     slug = models.SlugField(max_length=32, blank=True, null=True, unique=True)
     icon = models.CharField(max_length=32, choices=ICONS, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
+    count = models.IntegerField(default=0)
 
     def __unicode__(self):
         return self.name
@@ -54,11 +55,13 @@ class System(models.Model):
 
 class Application(models.Model):
     name = models.CharField(max_length=32, blank=True, null=True, unique=True)
+    version = models.CharField(max_length=32, blank=True, null=True, unique=True)
     icon = models.CharField(max_length=32, choices=ICONS, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
+    count = models.IntegerField(default=0)
 
     def __unicode__(self):
-        return self.name
+        return '{0}:{1}'.format(self.name, self.version)
 
 
 class Category(models.Model):
@@ -67,6 +70,7 @@ class Category(models.Model):
     name = models.CharField(max_length=32, blank=True, null=True, unique=True)
     icon = models.CharField(max_length=32, choices=ICONS, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
+    count = models.IntegerField(default=0)
 
     class Meta:
         ordering = ('rank', )

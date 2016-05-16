@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+import csv
+
+from django.utils.six.moves import range
+from django.http import HttpResponse
+from django.http import StreamingHttpResponse
 from django.views.generic import ListView, DetailView
 from rest_framework import viewsets
 
@@ -90,3 +95,26 @@ class ApplicationAPIViewSet(viewsets.ModelViewSet):
     """
     queryset = Application.objects.all()
     serializer_class = ApplicationSerializer
+
+
+class Echo(object):
+    """An object that implements just the write method of the file-like
+    interface.
+    """
+    def write(self, value):
+        """Write the value by returning it, instead of storing in a buffer."""
+        return value
+
+
+def csv_download(request):
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="filelist.csv"'
+
+    writer = csv.writer(response)
+    for f in File.objects.all():
+        categories = [c.name for c in f.categories.all()]
+        applications = [a.name for a in f.applications.all()]
+
+        writer.writerow([f.rank, f.path, f.name, f.system, ','.join(applications), ','.join(categories), f.description.encode('utf-8')])
+
+    return response

@@ -4,7 +4,7 @@ from rest_framework import routers
 
 from .views import FileViewDetail, FileViewList, SystemViewList, \
     SystemViewDetail, FileAPIViewSet, SystemAPIViewSet, \
-    ApplicationAPIViewSet, CategoryAPIViewSet
+    ApplicationAPIViewSet, CategoryAPIViewSet, csv_download
 
 router = routers.DefaultRouter()
 router.register(r'files', FileAPIViewSet)
@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^/system/(?P<slug>.*)$', SystemViewDetail.as_view(), name='fsdb-system-detail'),
 
     # Files
+    url(r'^filelist.csv$', csv_download, name='fsdb-csv-download'),
     url(r'^$', FileViewList.as_view(), name='fsdb-file-list'),
     url(r'^(?P<path>.*)$', FileViewDetail.as_view(), name='fsdb-file-detail'),
 
