@@ -64,7 +64,6 @@ class SystemViewList(ListView):
     model = System
 
 
-
 class FileAPIViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
