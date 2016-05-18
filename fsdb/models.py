@@ -42,6 +42,14 @@ EXTENSIONS = (
 )
 
 
+class Subscriber(models.Model):
+    name = models.CharField(max_length=132, blank=True, null=True, unique=True)
+    email = models.CharField(max_length=132, blank=True, null=True, unique=True)
+
+    def __unicode__(self):
+        return self.name
+
+
 class System(models.Model):
     name = models.CharField(max_length=32, blank=True, null=True, unique=True)
     slug = models.SlugField(max_length=32, blank=True, null=True, unique=True)
