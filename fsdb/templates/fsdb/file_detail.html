@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block navbar %}{% include 'fsdb/snippets/navbar.html' %}{% endblock %}
+{% block navbar %}{% include 'snippets/navbar.html' %}{% endblock %}
 
 {% block lsidebar %}
     <div class="sidebar-module">
@@ -60,6 +60,8 @@
             {% for app in object.applications.all %}
             <i class="fa {{ app.icon }} fa-2x" aria-hidden="true"></i>&nbsp;
             {% endfor %}
+
+            {% include 'snippets/disqus.html' %}
 {% endblock %}
 
 
