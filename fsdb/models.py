@@ -121,11 +121,12 @@ class File(models.Model):
 def pre_file(sender, **kwargs):
     file = kwargs['instance']
     file.system.update_count()
+    '''
     for app in file.applications.all():
         app.update_count()
     for cat in file.categories.all():
         cat.update_count()
-
+    '''
 
 
 @receiver(pre_save, sender=System)

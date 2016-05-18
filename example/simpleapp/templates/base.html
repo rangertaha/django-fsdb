@@ -1,19 +1,49 @@
-<html lang="en">
+{% load staticfiles %}
+{% spaceless %}
+<html lang="en" ng-app="">
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
-    <title>File List Database</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block meta %}
+        <meta name="description" content="{{ object.description }}">
+        <meta name="keywords" content="Hacking,CYBINT, OSINT, GEOINT, SIGINT, HUMINT, Intelligence, Cyber Warfare, Intelligence Based Cyber Security">
+        <meta name="author" content="cybint.io, cybint-io">
+    {% endblock %}
+
+    <title>{% block title %}{{ object.title|default:'' }}{% endblock %}</title>
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <script src="https://use.fontawesome.com/78d755e96e.js"></script>
+
+    {% endblock %}
+    {% block extra_stylesheets %}{% endblock %}
 </head>
 
 <body>
 {% block navbar %}{% include 'fsdb/snippets/navbar.html' %}{% endblock %}
-<div class="container-fluid">
-    {% block content %}{% endblock %}
-</div>
+{% block alerts %}{% endblock %}
+{% block container %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2">{% block lsidebar %}{% endblock %}</div>
+            <div class="col-sm-8">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="col-sm-2">{% block rsidebar %}{% endblock %}</div>
+        </div>
+    </div>
+{% endblock %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
+{% endspaceless %}
+
+
+
+
+

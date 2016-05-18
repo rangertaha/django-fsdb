@@ -1,17 +1,51 @@
 {% extends "base.html" %}
 
 {% block navbar %}{% include 'fsdb/snippets/navbar.html' %}{% endblock %}
+
+{% block lsidebar %}
+    <div class="sidebar-module">
+        <h4>Systems</h4>
+        <ol class="list-unstyled">
+            {% for obj in systems.all %}
+                <li><span class="badge">{{ obj.count }}</span>&nbsp;{{ obj.name }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+    <hr>
+    <div class="sidebar-module">
+        <h4>Applications</h4>
+        <ol class="list-unstyled">
+            {% for obj in applications.all %}
+                <li><span class="badge">{{ obj.count }}</span>&nbsp;{{ obj.name }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+    <hr>
+    <div class="sidebar-module">
+        <h4>Categories</h4>
+        <ol class="list-unstyled">
+            {% for obj in categories.all %}
+                <li><span class="badge">{{ obj.count }}</span>&nbsp;{{ obj.name }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+{% endblock %}
+{% block rsidebar %}{% endblock %}
+
 {% block content %}
+<style>
+    .progress {
+        height: 5px;
+        margin-bottom: 0px;
+        overflow: hidden;
+        background-color: #F5F5F5;
+        border-radius: 4px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) inset;
+    }
+</style>
 
+            {% include 'fsdb/snippets/search.html' %}
 
-<div class="container">
-
-
-    <div class="row">
-        <div class="col-sm-2" style="padding-top:50px;">
-
-        </div>
-        <div class="col-sm-8">
             <div class="page-header">
                 <h1>{{ object.name }}</h1>
                 <h2><small style="font-size: 14px;">{{ object.path }}</small></h2>
@@ -26,22 +60,6 @@
             {% for app in object.applications.all %}
             <i class="fa {{ app.icon }} fa-2x" aria-hidden="true"></i>&nbsp;
             {% endfor %}
-
-        </div>
-        <div class="col-sm-2"></div>
-    </div>
-
-
-</div>
-
 {% endblock %}
 
-{% block disqus %}
-<div class="container">
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">}</div>
-        <div class="col-sm-2"></div>
-    </div>
-</div>
-{% endblock %}
+
