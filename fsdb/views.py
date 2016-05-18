@@ -27,6 +27,13 @@ class FileViewDetail(DetailView):
         return self.model.objects.get(
             active=True, path=self.kwargs.get('path', None))
 
+    def get_context_data(self, **kwargs):
+        context = super(FileViewDetail, self).get_context_data(**kwargs)
+        context['systems'] = System.objects.filter().distinct()
+        context['applications'] = Application.objects.filter().distinct()
+        context['categories'] = Category.objects.filter().distinct()
+        return context
+
 
 class FileViewList(ListView):
     model = File
