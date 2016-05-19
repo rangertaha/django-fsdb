@@ -25,7 +25,7 @@ class FileViewDetail(DetailView):
 
     def get_object(self, queryset=None):
         return self.model.objects.get(
-            active=True, path=self.kwargs.get('path', None))
+            path=self.kwargs.get('path', ''))
 
     def get_context_data(self, **kwargs):
         context = super(FileViewDetail, self).get_context_data(**kwargs)
