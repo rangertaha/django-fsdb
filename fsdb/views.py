@@ -37,7 +37,7 @@ class FileViewDetail(DetailView):
 
 class FileViewList(ListView):
     model = File
-    paginate_by = 5
+    paginate_by = 10
 
     def get_queryset(self):
         if self.request.GET.get('q'):

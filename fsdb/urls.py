@@ -19,8 +19,8 @@ urlpatterns = [
     # Directories
 
     # Systems
-    url(r'^/system$', SystemViewList.as_view(), name='fsdb-system-list'),
-    url(r'^/system/(?P<slug>.*)$', SystemViewDetail.as_view(), name='fsdb-system-detail'),
+    url(r'^system$', SystemViewList.as_view(), name='fsdb-system-list'),
+    url(r'^system/(?P<slug>.*)$', SystemViewDetail.as_view(), name='fsdb-system-detail'),
 
     # Files
     url(r'^filelist.csv$', csv_download, name='fsdb-csv-download'),
