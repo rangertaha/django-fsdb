@@ -119,7 +119,7 @@ class File(models.Model):
     active = models.BooleanField(_('Active'), default=False)
 
     class Meta:
-        ordering = ('rank',)
+        ordering = ('-rank',)
 
     def __unicode__(self):
         return self.path
