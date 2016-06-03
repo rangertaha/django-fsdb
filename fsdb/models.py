@@ -43,7 +43,7 @@ EXTENSIONS = (
 
 
 class Subscriber(models.Model):
-    name = models.CharField(max_length=132, blank=True, null=True, unique=True)
+    name = models.CharField(max_length=132, blank=True, null=True)
     email = models.CharField(max_length=132, blank=True, null=True, unique=True)
 
     def __unicode__(self):
@@ -67,7 +67,7 @@ class System(models.Model):
 
 class Application(models.Model):
     name = models.CharField(max_length=32, blank=True, null=True, unique=True)
-    version = models.CharField(max_length=32, blank=True, null=True, unique=True)
+    version = models.CharField(max_length=32, blank=True, null=True)
     icon = models.CharField(max_length=32, choices=ICONS, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     count = models.IntegerField(default=0)
