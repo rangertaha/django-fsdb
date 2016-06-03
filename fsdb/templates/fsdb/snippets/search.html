@@ -9,9 +9,11 @@
                     <input type="text" class="form-control" name="q" id="" placeholder="Search...">
                          <span class="input-group-btn">
         <button class="btn btn-default" type="button" onclick="location.href='{% url 'fsdb-csv-download' %}';"><i class="fa fa-cloud-download" aria-hidden="true"></i> CSV</button>
+                             {% comment %}
                              <button class="btn btn-default" type="button" data-toggle="modal" data-target="#add-file">
                                  <i class="fa fa-plus" aria-hidden="true"></i> ADD
                              </button>
+                             {% endcomment %}
       </span>
 
                 </div>
