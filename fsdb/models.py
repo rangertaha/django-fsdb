@@ -38,7 +38,6 @@ EXTENSIONS = (
     ('json', '.json'),
     ('db', '.db'),
     ('dat', '.dat'),
-
 )
 
 
