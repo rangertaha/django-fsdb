@@ -2,6 +2,12 @@
 
 {% block navbar %}{% include 'snippets/navbar.html' %}{% endblock %}
 
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li><a href="/">Apps</a></li>
+        <li><a href="{% url 'fsdb-file-list' %}">FileList</a></li>
+    </ol>
+{% endblock %}
 
 {% block lsidebar %}
     <h1>File List</h1>
